@@ -56,7 +56,7 @@ if len(arguments) > 1:
     original_sequence = arguments[1]
     # process arg1
 tokenizer = AutoTokenizer.from_pretrained("facebook/esmfold_v1")
-model = EsmForProteinFolding.from_pretrained("/storage/plzen4-ntis/home/jrx99/esmfold/", low_cpu_mem_usage=True)
+model = EsmForProteinFolding.from_pretrained("/storage/plzen4-ntis/home/jrx99/esmfold/", low_cpu_mem_usage=True) #change this to path to your esmfold weights
 
 model = model.cuda()
 model.esm = model.esm.half()
@@ -113,9 +113,9 @@ for i in range(len(mutated_sequences)):
   pdb = convert_outputs_to_pdb(output)
   pae = convert_outputs_to_pae(output)
 
-  output_directory = f"/storage/plzen4-ntis/home/jrx99/esm_mutations/{original_sequence}"
+  output_directory = f"/storage/plzen4-ntis/home/jrx99/esm_mutations/{original_sequence}" #change this
   os.makedirs(output_directory, exist_ok=True)
-  output_directory = f"/storage/plzen4-ntis/home/jrx99/esm_mutations/{original_sequence}/{ID}"
+  output_directory = f"/storage/plzen4-ntis/home/jrx99/esm_mutations/{original_sequence}/{ID}" #change this
   os.makedirs(output_directory, exist_ok=True)
     
     # Change permissions to allow writing
