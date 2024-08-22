@@ -13,18 +13,14 @@ This repository contains the code and resources for a computational framework de
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Experimental Validation](#experimental-validation)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+
 
 ## Installation
 
 ### Prerequisites
 - Python 3.x
 - Required Python libraries: `numpy`, `pandas`, `tensorflow`, `torch`, `biopython`, `matplotlib`
-- Ensure you have access to Meta AI’s ESMFold and AlphaFold3 models.
+- Ensure you have access to Meta AI’s ESMFold model.
 
 ### Installation Steps
 
@@ -42,7 +38,7 @@ This repository contains the code and resources for a computational framework de
 
 3. Install the required dependencies:
     ```bash
-    pip install -r requirements.txt
+    bash install_esmfold_linux.sh
     ```
 
 4. Set up any additional dependencies or environment variables as required by your project.
@@ -54,16 +50,11 @@ This repository contains the code and resources for a computational framework de
 1. Prepare the protein sequence input files and configure the desired settings for the model in the configuration file.
 2. Run the script to predict protein structures:
     ```bash
-    python run_prediction.py --model esmfold --input sequences.fasta
+    python esmfold_transformers.py
     ```
 
 3. Execute the evolutionary algorithm to identify potential inhibitors:
     ```bash
-    python run_evolution.py --input predicted_structures.pdb
+    python evolutionary_algorithm.py 
     ```
 
-### Example
-Here's a simple example of predicting a protein structure and designing an inhibitor:
-```bash
-python run_prediction.py --model esmfold --input examples/sample_sequence.fasta
-python run_evolution.py --input results/sample_structure.pdb
