@@ -23,18 +23,15 @@ cd input
 mkdir pdb_template
 mkdir tmp
 
-
-
-
 echo "Copying protein template......"
-cp -r /storage/plzen4-ntis/home/jrx99/esmfold_mutation_control/pdb_template .
-
+cp -r /path/to/source/pdb_template .
 
 echo "Running script......"
-python /auto/plzen1/home/jrx99/evo_alg/scripts/evolutionary_algorithm.py
+python /path/to/script/evolutionary_algorithm.py
 
 echo "Copying output files......"
-cp -r $SCRATCHDIR/results /storage/plzen1/home/jrx99/evo_alg/inhibitor/outputs/LYEYAFNAWYILFAH
+cp -r $SCRATCHDIR/results /path/to/destination/outputs
+
 echo "Deleting Scratch"
 #rm -r $SCRATCHDIR/input
 
